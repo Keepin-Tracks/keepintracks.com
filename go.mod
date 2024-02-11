@@ -1,4 +1,4 @@
-module github.com/chrede88/qubtTemplate
+module github.com/SimpleOpenSource/KeepinTracks
 
 go 1.22.0
 
