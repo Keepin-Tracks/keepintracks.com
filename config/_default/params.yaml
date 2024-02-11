@@ -3,10 +3,10 @@
 ############################
 
 author:
-  name: SimpleOpenSource
-  image: author.png
-  greeting: "Your new Qubt site :tada:"
-  icon: ":wave:"
+  name: Keepin' Tracks
+  image: logo.png
+  greeting: "Providing tools to easily track and use your data!"
+  icon: ""
 
 ############################
 ## Links
