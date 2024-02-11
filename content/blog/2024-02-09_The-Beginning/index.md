@@ -1,10 +1,10 @@
 ---
-title: Blog Post with Inline Images
-subtitle: "Blog post subtitle :zap:"
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-date: 2023-11-24
-cardimage: photo1_card.jpeg
-featureimage: photo1.jpeg
+title: The Beginning
+subtitle: "Finally starting a business for real :zap:"
+summary: "From the idea of starting a business to actually doing and choosing to make the whole process public."
+date: 2024-02-09
+cardimage: "photo1.jpeg"
+featureimage: "photo1.jpeg"
 caption: Image caption
 authors:
   - Christian: author.jpeg
