@@ -6,9 +6,12 @@ main:
 - name: Home
   url: /
   weight: 10
+- name: Products
+  url: /products/
+  weight: 20
 - name: Blog
   url: /blog/
-  weight: 20
+  weight: 30
 - name: About
   url: /about/
-  weight: 30
+  weight: 40
