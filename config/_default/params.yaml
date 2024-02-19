@@ -13,8 +13,10 @@ author:
 ############################
 
 links:
-  - github: https://github.com/SimpleOpenSource/KeepinTracks
-  - link: https://github.com/SimpleOpenSource/KeepinTracks#readme
+  - youtube: https://www.youtube.com/@KeepinTracks
+  - email: mailto:info@keepintracks.com
+  # - github: https://github.com/SimpleOpenSource/KeepinTracks
+  # - link: https://github.com/SimpleOpenSource/KeepinTracks#readme
   # - website: 
   # - x-twitter: 
   # - mastodon: 
@@ -26,7 +28,6 @@ links:
   # - signal: 
   # - codepen: 
   # - dev: 
-  # - email: 
   # - discord: 
   # - orcid: 
   # - slack: 
@@ -37,7 +38,6 @@ links:
   # - dribbble: 
   # - stack-exchange: 
   # - tiktok: 
-  # - youtube: 
   # - keybase: 
   # - flickr: 
   # - tumblr: 
