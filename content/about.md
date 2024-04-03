@@ -1,12 +1,5 @@
 ---
-# don't change
-type: misc
-
-# change these
-jobTitle: Providing tools to easily track and use your data!
-name: "Keepin' Tracks"
-bio: true
-icon: ":coffee:"
+title: about
 ---
 
 This the website and blog for tracking the progress of the implementation of a business idea. It helps me learn many different things while providing the knowledge of those things to anyone.

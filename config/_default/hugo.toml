@@ -1,0 +1,5 @@
+baseURL = 'https://www.keepintracks.com/'
+title = "Keepin' Tracks"
+
+theme = ["github.com/theNewDynamic/gohugo-theme-ananke", 'darths-hugo-shortcodes']
+languageCode = 'en-us'

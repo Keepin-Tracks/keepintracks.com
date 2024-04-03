@@ -2,7 +2,7 @@
 
 Official Website and Blog for the Keepin' Tracks business project.
 
-Just getting started to learn about Hugo static website builder. I am husing the Qubt theme to get started with a mobile friendly website.
+Just getting started to learn about Hugo static website builder. I started the website using the default Hugo theme [Ananke](https://github.com/theNewDynamic/gohugo-theme-ananke)
 
 I will try to blog about progression of the implementation of the blog as well as progress on the business aspects of the project.
 
@@ -10,7 +10,14 @@ I will try to blog about progression of the implementation of the blog as well a
 ## Installation
 
 * [Installing Hugo](https://gohugo.io/installation/)
-* Launch the website with "hugo server"
+* Launch the website with "hugo serve"
+
+## Production build
+
+* HUGO=PRODUCTION hugo
 
 ## Ressources
-* [Qubt Theme Github Rebo for documentation](https://github.com/Chrede88/qubtTemplate#readme)
+* [Ananke Github Repo for documentation](https://github.com/theNewDynamic/gohugo-theme-ananke)
+* [Bootstrap documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+* [Bootstrap Icons](https://icons.getbootstrap.com/)
+* [Background skins colors](https://tachyons.io/docs/themes/skins/)

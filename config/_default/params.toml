@@ -1,0 +1,25 @@
+site_logo = "/images/logo.png"
+favicon = '/images/icon.png'
+
+background_color_class = "bg-near-black"
+featured_image = '/images/cover.jpg'
+
+[[ananke_socials]]
+name = "facebook"
+url = "https://www.facebook.com/KeepinTracksApps"
+
+[[ananke_socials]]
+name = 'instagram'
+url = 'https://www.instagram.com/keepintracks/'
+
+[[ananke_socials]]
+name = 'linkedin'
+url = 'https://linkedin.com/company/keepin-tracks'
+
+# [[ananke_socials]]
+# name = 'etsy'
+# url = 'https://www.etsy.com/shop/KeepinTracks'
+
+# [[ananke_socials]]
+# name = 'email'
+# url = 'mailto:info@keepintracks.com'
