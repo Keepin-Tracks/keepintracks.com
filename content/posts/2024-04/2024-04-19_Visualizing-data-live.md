@@ -1,5 +1,6 @@
 ---
 title: Visualizing data live
+date: 2024-04-19
 image: '/images/francislah.png'
 ---
 Since business intelligence is becoming more and more critical in businesses today. We are going to implement a structure to easily track and visualize our data right from the start.

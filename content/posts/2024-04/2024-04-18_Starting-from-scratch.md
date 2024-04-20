@@ -1,5 +1,6 @@
 ---
 title: Starting from scratch
+date: 2024-04-18
 image: '/images/francislah.png'
 ---
 
