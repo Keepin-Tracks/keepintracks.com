@@ -1,5 +1,6 @@
 ---
-title: about
+title: About
+menu: main
 ---
 
 This the website and blog for tracking the progress of the implementation of a business idea. It helps me learn many different things while providing the knowledge of those things to anyone.
