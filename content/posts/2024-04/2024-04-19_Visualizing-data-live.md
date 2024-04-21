@@ -1,5 +1,6 @@
 ---
 title: Visualizing data live
+date: 2024-04-19
 image: '/images/francislah.png'
 ---
 Since business intelligence is becoming more and more critical in businesses today. We are going to implement a structure to easily track and visualize our data right from the start.
@@ -22,7 +23,11 @@ By connecting to our Github account, Streamlit will retrieve latest code and dep
 When connecting to the Github repo where we pushed the Streamlit app code, we need to press "Advanced settings" and then add the content of the local secrets.toml file in the box.
 
 ## App might break... Add depedencies
-Now our app is live at : [https://keepintracks-accounting.streamlit.app/](https://keepintracks-accounting.streamlit.app/)
-Live but broken for now. That is because we used a depedency for Google Sheets that Stremlit doesn't know about. It was installed locally, but now the cloud doesn't know the project needs it...
+Now our app is live at : [https://keepintracks-accounting.streamlit.app/](https://keepintracks-accounting.streamlit.app/).
+Live but broken for now. That is because we used a depedency for Google Sheets that Streamlit doesn't know about. It was installed locally, but now the cloud doesn't know the project needs it...
 
 By adding a requirements.txt file with all python packages depedencies we need in order for the project to run properly, the app will now build without problems in the Cloud Community deployment.
+
+Here is the first chart : 
+
+{{< streamlit url="https://keepintracks-accounting.streamlit.app/?embedded=true" >}}

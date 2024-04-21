@@ -1,0 +1,23 @@
+{{ $featured_image := partial "func/GetFeaturedImage.html" . }}
+<article class="postcard dark green">
+    <a class="postcard__img_link"  href="{{ .RelPermalink }}">
+        <img class="postcard__img" src="{{ $featured_image }}" alt="Image Title" />
+        <div class="postcard__text">
+            <h1 class="postcard__title green">{{ .Title }}</h1>
+        <div class="postcard__subtitle small">
+            <time datetime="2020-05-25 12:00:00">
+                <i class="fas fa-calendar-alt mr-2"></i>{{ .Date.Format "January 2, 2006" }}
+            </time>
+        </div>
+        <div class="postcard__bar"></div>
+        <div class="postcard__preview-txt">{{ .Summary }}</div>
+        <!-- <ul class="postcard__tagbox">
+            <li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
+            <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+            <li class="tag__item play green">
+                <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+            </li>
+        </ul> -->
+    </div>
+</a>
+</article>
