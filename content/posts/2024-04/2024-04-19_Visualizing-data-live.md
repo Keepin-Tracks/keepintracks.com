@@ -28,6 +28,8 @@ Live but broken for now. That is because we used a depedency for Google Sheets t
 
 By adding a requirements.txt file with all python packages depedencies we need in order for the project to run properly, the app will now build without problems in the Cloud Community deployment.
 
-Here is the first chart : 
+Here is a picture of the first chart:
+![StreamlitChart](/images/posts/first-streamlit-chart.png)
 
+Here is the live report embedded: 
 {{< streamlit url="https://keepintracks-accounting.streamlit.app/?embedded=true" >}}

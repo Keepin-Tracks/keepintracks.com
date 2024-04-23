@@ -12,6 +12,26 @@
     {{/* Derive the section name  */}}
     {{ $section_name := index (.Site.Params.mainSections) 0 }}
 
+    {{ $products := where .Site.RegularPages "Section" "products" }}
+    <div class="pa3 pa4-ns w-100 w-70-ns center">
+    <div class="row">
+    {{ range $products }}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <a class="postcard__img_link"  href="{{ .RelPermalink }}">
+            <img class="card-img-top" src="{{ .Params.image }}" alt="{{ .Title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ .Title }}</h5>
+                <p class="card-text">{{ .Summary }}</p>
+                <a href="{{ .RelPermalink }}" class="btn btn-primary">Learn More</a>
+            </div>
+            </a>
+        </div>
+    </div>
+    {{ end }}
+    </div>
+    </div>
+
     <div class="pa3 pa4-ns w-100 w-70-ns center">
       {{/* Use $section_name to get the section title. Use "with" to only show it if it exists */}}
        {{ with .Site.GetPage "section" $section_name }}
