@@ -1,8 +1,10 @@
 ---
 title: Wealth Tracker
-excerpt: An app to track all your activities
+excerpt: An app to track your money and gain control over your financial wealth
 featured_image: '/images/wealth-cover.jpeg'
-image: '/images/WealthTracker-logo.png'
+image: '/images/logos/wealthtracker-yellow-logo.png'
 ---
 
-{{< button "Buy Now" "https://keepintracks.etsy.com" >}}
+An app to track your money and gain control over your financial wealth.<!--more-->
+
+{{< button "Find Here" "https://www.appsheet.com/portfolio/503437487" >}}
