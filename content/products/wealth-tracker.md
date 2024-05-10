@@ -2,7 +2,7 @@
 title: Wealth Tracker
 excerpt: An app to track your money and gain control over your financial wealth
 featured_image: '/images/wealth-cover.jpeg'
-image: '/images/logos/wealthtracker-yellow-logo.png'
+image: '/images/logos/wealthtracker-yellow.png'
 ---
 
 An app to track your money and gain control over your financial wealth.<!--more-->
