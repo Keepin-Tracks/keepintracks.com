@@ -6,5 +6,7 @@ image: '/images/logos/wealthtracker-yellow.png'
 ---
 
 An app to track your money and gain control over your financial wealth.<!--more-->
+{{< appsheet >}}
 
-{{< button "Find Here" "https://www.appsheet.com/portfolio/503437487" >}}
+{{< button "Buy Here" "https://www.appsheet.com/portfolio/503437487" >}}
+
