@@ -1,0 +1,56 @@
+en:
+  languageName: "English"
+  weight: 1
+  taxonomies:
+    category: categories
+    tag: tags
+    series: series
+    personal-favorite: personal-favorites
+  menu:
+    main:
+      # - name: Archive
+      #   url: archives
+      #   weight: 5
+      - name: Posts
+        url: posts/
+        weight: 5
+      - name: Things
+        url: things/
+        weight: 10
+      - name: My tracks 
+        url: my-tracks/
+        weight: 15
+      - name: Personal Favorites
+        url: personal-favorites/
+        weight: 18
+      - name: Search
+        url: search/
+        weight: 20
+      # - name: Tags
+      #   url: tags/
+      #   weight: 10
+      # - name: WiKi
+      #   url: https://github.com/adityatelange/hugo-PaperMod/wiki/
+
+fr:
+  languageName: ":fr:"
+  weight: 2
+  title: KeepinTracks
+  taxonomies:
+    category: catégories
+    tag: tags
+    series: séries
+  menu:
+    main:
+      - name: Publications
+        url: publications/
+        weight: 5
+      - name: Choses
+        url: choses/
+        weight: 10
+      - name: Mes suivis 
+        url: mes-suivis/
+        weight: 15
+      - name: Rechercher
+        url: /recherche
+        weight: 20
