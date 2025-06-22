@@ -14,12 +14,6 @@ en:
       - name: Posts
         url: posts/
         weight: 5
-      - name: Things
-        url: things/
-        weight: 10
-      - name: My tracks 
-        url: my-tracks/
-        weight: 15
       - name: Personal Favorites
         url: personal-favorites/
         weight: 18
@@ -45,12 +39,6 @@ fr:
       - name: Publications
         url: publications/
         weight: 5
-      - name: Choses
-        url: choses/
-        weight: 10
-      - name: Mes suivis 
-        url: mes-suivis/
-        weight: 15
       - name: Rechercher
         url: /recherche
         weight: 20

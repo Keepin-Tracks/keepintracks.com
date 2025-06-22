@@ -1,3 +1,0 @@
----
-title: LifeSheet (GoogleSheet Tracker)
----

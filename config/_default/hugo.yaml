@@ -3,7 +3,6 @@
 baseURL: "https://keepintracks/"
 title: KeepinTracks
 copyright: "© KeepinTracks 2024"
-paginate: 5
 theme: [PaperMod]
 
 enableInlineShortcodes: true
@@ -13,7 +12,7 @@ buildFuture: false
 buildExpired: false
 enableEmoji: true
 pygmentsUseClasses: true
-mainsections: ["posts", "personal favorites", "things"]
+mainsections: ["posts", "personal favorites"]
 
 # minify:
 #   disableXML: true
