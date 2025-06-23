@@ -1,6 +1,7 @@
 ---
 title: Rick Rubin - The Creative Act
 personal-favorites: [Book]
+date: "2025-06-21"
 ---
 # Why
 
