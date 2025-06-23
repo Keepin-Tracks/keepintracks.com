@@ -78,3 +78,8 @@ For the purpose of providing resources of other people and giving them the credi
 I hope you will take the time to clarify your vision for your goal and life.
 
 Keep track of your life, keep track of your habits!
+
+# Templates
+
+* [Health Tracking](https://docs.google.com/spreadsheets/d/1QqiV7Y00_zAINU6hETKuOVlfXr9VaItzNaVRAYRA798/edit?usp=sharing)
+* [Mind Tracking](https://docs.google.com/spreadsheets/d/1iQ62hGcQ3OP7Ve4qkQrkdya6aHDaqBJTS1r23NA6PZU/edit?usp=sharing)
