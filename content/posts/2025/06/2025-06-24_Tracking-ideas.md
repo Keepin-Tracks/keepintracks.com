@@ -53,3 +53,7 @@ Now, you might feel it is not much user friendly if you are on a phone to go and
 I feel you. That's why in the next post, we are going to build an app available on all platforms (ios, android, and web browser) to help us enter new data easily.
 
 Until then, continue tracking your data. We are growing habits here.
+
+# Template
+
+* [Mind Tracker](https://docs.google.com/spreadsheets/d/1EP9ikLcOYp5pQhpHtkz8y1kpIpUFYWoXY-z7FOJEwwA/edit?usp=sharing)
