@@ -2,7 +2,7 @@
 title: First Google Sheet
 author: ["Keepin'"]
 date: "2025-06-22"
-description: "Setting up your first Google Sheet"
+summary: "Setting up your first Google Sheet"
 tags: ["Google Sheet", "Tracking"]
 ShowToc: true
 ---
