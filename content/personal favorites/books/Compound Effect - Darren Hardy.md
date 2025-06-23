@@ -1,7 +1,8 @@
 ---
-title: Darren Hardy - The Compound Effect  
+title: The Compound Effect - Darren Hardy
 personal-favorites: [Book]
 date: "2025-06-22"
+summary: TBD # TODO Write a better summary
 ---
 # Why
 

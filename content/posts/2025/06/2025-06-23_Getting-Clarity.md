@@ -34,7 +34,7 @@ Let's start today, to imprit our minds with a destination we want to go to. As w
     - Answer: Text
     - Date answered: Date
         - This will help us know which question to revised after a certain time
-4. Create another tab named "Question"
+4. Create another tab named "Questions"
 5. Add the following columns
     - Question: Text
     - Answer: Text
@@ -63,7 +63,7 @@ We will ask ourselves questions that will enable us to gain greater clarity on w
 2. Add the following question: "Who do I need to become to reach my goal?"
     - Describe the goal in the right column
     - Take your time to answer properly
-3. Finally, let's create the "Goal" tab right now with one column "Goal" of type Text
+3. Finally, let's create the "Goals" tab right now with one column "Goal" of type Text
 4. Change the Goal column type from Clarity to a drowdown from range pointing to the new Goal tab "(Goal!A2:A)"
 
 ### Find ressources

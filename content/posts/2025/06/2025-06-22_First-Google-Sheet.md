@@ -25,18 +25,18 @@ ShowToc: true
 
 ## Tracking exercises
 
-1. Create a new tab and name it "Exercise"
-    - Add a table named "Exercise" as well
-2. Create a new tab and name it "ExerciseEntry"
-    - Add a table name "ExerciseEntry" as well
+1. Create a new tab and name it "Exercises"
+    - Add a table named "Exercises" as well
+2. Create a new tab and name it "ExerciseEntries"
+    - Add a table name "ExerciseEntries" as well
 * The Exercise tab will contain the exercise we want to track, such as walking, running, push-ups and any other ones.
-* The ExerciseEntry tab will be used to record every time we practice one exercise.
-3. In the ExerciseEntry tab, set the following columns
+* The ExerciseEntries tab will be used to record every time we practice one exercise.
+3. In the ExerciseEntries tab, set the following columns
     - Date: DateTime
     - Exercise: Dropdown (With a range) -> Select A2:A from the tab Exercise, which will be all exercises options
     - Quantity: Number
         - For now my exercises will be mostly quantity types, such as a number of Push-Ups, but I will probably eventually track some exercises in terms of duration. Then I will add a new column
-4. In the Exercise tab, set the following columns
+4. In the Exercises tab, set the following columns
     - Exercise: Text
     - Notes: Text
 

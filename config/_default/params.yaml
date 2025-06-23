@@ -3,6 +3,13 @@ env: production # to enable google analytics, opengraph, twitter-cards and schem
 # author: Theme PaperMod
 author: ["Francis", "KeepinTracks"] # multiple authors
 
+assets:
+    favicon: "/favicons/favicon.ico"
+    favicon16x16: "/favicons/favicon-96x96.png" 
+    favicon32x32: "/favicons/favicon-96x96.png" 
+    webmanifest: "/favicons/site.webmanifest"
+    apple_touch_icon: "/favicons/apple-touch-icon.png"
+
 defaultTheme: auto
 # disableThemeToggle: true
 ShowShareButtons: true
