@@ -50,7 +50,7 @@ Spend some time thinking about it and take the time to answer it properly. So ma
 
 Once you're finished writing your answer, you might find that the display is not really great. I like to make all text in my sheets to wrap itself on a second line when it gets too long. If you want to try click in the top left corner of the sheet to select all cells and then press the text wrapping icon to wrap the text.
 
-![Google Sheets Text wrapping icon](/posts/2025/06/2025-06-23_Getting-Clarity_text-wrapping.png)
+![Google Sheets Text wrapping icon](/posts/2025/06/23/Getting-Clarity_text-wrapping.png)
 
 ## Take pauses in life
 I went to take a walk for 45 minutes. I now fill the need to track duration for my Walking exercise. Let's add this column to my ExerciseEntry tab in my Health tracking system. Column name will be Duration and type will be None but by selecting the column we can then format it to duration by selecting the number format in the task bar instead of the table settings.

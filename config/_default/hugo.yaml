@@ -2,7 +2,7 @@
 # contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
 baseURL: "https://keepintracks/"
 title: KeepinTracks
-copyright: "© KeepinTracks 2024"
+copyright: "© KeepinTracks 2025"
 theme: [PaperMod]
 
 enableInlineShortcodes: true

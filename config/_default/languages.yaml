@@ -20,6 +20,8 @@ en:
       - name: Search
         url: search/
         weight: 20
+      - name: Docs
+        url: https://docs.keepintracks.com
       # - name: Tags
       #   url: tags/
       #   weight: 10
