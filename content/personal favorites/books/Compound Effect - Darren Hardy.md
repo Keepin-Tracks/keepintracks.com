@@ -3,6 +3,7 @@ title: The Compound Effect - Darren Hardy
 personal-favorites: [Book]
 date: "2025-06-22"
 summary: When I first read the book, it stuck with me how little things adds up through time.
+thumbnail: "https://m.media-amazon.com/images/I/610QDSRlLYL._SY425_.jpg"
 ---
 # Why
 

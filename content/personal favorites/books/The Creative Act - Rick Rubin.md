@@ -3,6 +3,7 @@ title: The Creative Act - Rick Rubin
 personal-favorites: [Book]
 date: "2025-06-21"
 summary: My go to book on the subject of creativity to get inspiration on how to create the things on my mind, or even to get ideas on my mind.
+thumbnail: "https://m.media-amazon.com/images/I/918EkrTDaRL._SL1500_.jpg"
 ---
 # Why
 
