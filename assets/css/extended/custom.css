@@ -1,0 +1,17 @@
+.entry-with-thumbnail .entry-flex-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.entry-with-thumbnail .entry-text {
+  flex: 1;
+}
+
+.entry-thumbnail img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}

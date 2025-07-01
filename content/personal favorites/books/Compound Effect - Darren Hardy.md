@@ -2,7 +2,7 @@
 title: The Compound Effect - Darren Hardy
 personal-favorites: [Book]
 date: "2025-06-22"
-summary: TBD # TODO Write a better summary
+summary: When I first read the book, it stuck with me how little things adds up through time.
 ---
 # Why
 

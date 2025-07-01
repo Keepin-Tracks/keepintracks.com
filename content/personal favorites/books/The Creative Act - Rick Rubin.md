@@ -2,7 +2,7 @@
 title: The Creative Act - Rick Rubin
 personal-favorites: [Book]
 date: "2025-06-21"
-summary: TBD # TODO Write a better summary
+summary: My go to book on the subject of creativity to get inspiration on how to create the things on my mind, or even to get ideas on my mind.
 ---
 # Why
 

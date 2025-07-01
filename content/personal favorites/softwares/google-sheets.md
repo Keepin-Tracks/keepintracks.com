@@ -1,6 +1,8 @@
 ---
 title: Google Sheets
 personal-favorites: [Softwares]
+date: "2025-06-24"
+summary: A copy of the infamous Excel entirely cloud based with great reliability and availibility on all systems through a web browser or app.
 ---
 # What
 A cloud based Excel like tool.

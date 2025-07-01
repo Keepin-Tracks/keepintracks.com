@@ -1,7 +1,8 @@
 env: production # to enable google analytics, opengraph, twitter-cards and schema.
 # description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
 # author: Theme PaperMod
-author: ["Francis", "KeepinTracks"] # multiple authors
+author: ["KeepinTracks"] # multiple authors
+customCSS: ["css/custom.css"]
 
 assets:
     favicon: "/favicons/favicon.ico"
