@@ -21,4 +21,4 @@ What about cleaning it? Just rinse and it's done!
 ## Where
 In the last 10 years, I am now at my second one. I had washed the first one too many times and too hard with the green side of the sponge. The plastic started to show some dents and roughness which I didn't appreciate. 100% my fault.
 
-[You can buy it on Amazon Canada](https://amzn.to/44PoRNF)
+[You can buy it on Amazon Canada](https://amzn.to/44PoRNF) or [Amazon USA](https://amzn.to/4l7TmF7)
