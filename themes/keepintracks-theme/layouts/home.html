@@ -1,0 +1,142 @@
+{{ define "main" }}
+<div class="homepage">
+  <div class="hero-section">
+    <h1>{{ .Title }}</h1>
+    <p class="hero-subtitle">{{ .Params.description | default "Personal tracking and business accounting solutions" }}</p>
+  </div>
+
+  <div class="products-section">
+    <div class="products-container">
+      <!-- Personal Product - Keepin'App -->
+      <div class="product-card product-card-personal">
+        <div class="product-badge personal-badge">Personal</div>
+        <h2 class="product-title">Keepin'App</h2>
+        <p class="product-tagline">Free Personal Tracking</p>
+        <p class="product-description">
+          Track your health, mind, and wealth all in one place. Monitor finances, net worth, weight, exercise, and journaling.
+        </p>
+        <div class="product-features">
+          <div class="feature-item">
+            <span class="feature-icon">💰</span>
+            <span>Finances & Net Worth</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">⚖️</span>
+            <span>Weight Tracking</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">💪</span>
+            <span>Exercise Tracking</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📝</span>
+            <span>Journaling</span>
+          </div>
+        </div>
+        <div class="product-highlight">100% Free</div>
+        <a href="{{ "/products/keepin-app/" | relURL }}" class="product-button product-button-primary">
+          Learn More →
+        </a>
+      </div>
+
+      <!-- Business Product - Keepin'Accounts -->
+      <div class="product-card product-card-business">
+        <div class="product-badge business-badge">Business</div>
+        <h2 class="product-title">Keepin'Accounts</h2>
+        <p class="product-tagline">Professional Accounting</p>
+        <p class="product-description">
+          Comprehensive accounting software for your business. Manage invoices, expenses, and financial reports.
+        </p>
+        <div class="product-features">
+          <div class="feature-item">
+            <span class="feature-icon">📊</span>
+            <span>Financial Reports</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🧾</span>
+            <span>Invoice Management</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📈</span>
+            <span>Expense Tracking</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📋</span>
+            <span>Tax Preparation</span>
+          </div>
+        </div>
+        <div class="product-highlight coming-soon">Coming Soon</div>
+        <a href="{{ "/products/keepin-accounts/" | relURL }}" class="product-button product-button-secondary">
+          Learn More →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="posts-section">
+    <div class="posts-header">
+      <h2>Latest Posts</h2>
+      <a href="{{ "/posts/" | relURL }}" class="view-all-link">View All →</a>
+    </div>
+    <div class="posts-container">
+      {{ range first 3 (where site.RegularPages "Section" "posts") }}
+      <a href="{{ .RelPermalink }}" class="post-card-link">
+        <article class="post-card">
+          {{ if .Params.image }}
+          <div class="post-image">
+            <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy">
+          </div>
+          {{ else }}
+          <div class="post-image post-image-placeholder">
+            <div class="placeholder-content">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+            </div>
+          </div>
+          {{ end }}
+          <div class="post-content">
+            {{ if .Params.categories }}
+            <div class="post-categories">
+              {{ range first 1 .Params.categories }}
+              <span class="post-category">{{ . }}</span>
+              {{ end }}
+            </div>
+            {{ end }}
+            <h3 class="post-title">{{ .Title }}</h3>
+            {{ if .Params.description }}
+            <p class="post-description">{{ .Params.description }}</p>
+            {{ else if .Summary }}
+            <p class="post-description">{{ .Summary | truncate 120 }}</p>
+            {{ end }}
+            <div class="post-meta">
+              <time datetime="{{ .Date | time.Format "2006-01-02" }}" class="post-date">
+                {{ .Date | time.Format "January 2, 2006" }}
+              </time>
+              {{ if .Params.linkedin }}
+              <span class="post-social" onclick="event.stopPropagation(); window.open('{{ .Params.linkedin }}', '_blank', 'noopener,noreferrer');" aria-label="Discuss on LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <span>Discuss</span>
+              </span>
+              {{ end }}
+            </div>
+          </div>
+        </article>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+
+  {{ if .Content }}
+  <div class="content-section">
+    {{ .Content }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}

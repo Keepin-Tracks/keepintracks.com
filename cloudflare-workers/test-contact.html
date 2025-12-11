@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Contact Form - Cloudflare Worker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        button:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+        .message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        .message-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .message-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .message.show {
+            display: block;
+        }
+        .info {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+        .info code {
+            background-color: #fff;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test Contact Form</h1>
+        <div class="info">
+            <strong>Worker URL:</strong> <code>https://workers.keepintracks.com</code><br>
+            <strong>Status:</strong> <span id="worker-status">Checking...</span>
+        </div>
+        
+        <form id="test-form">
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Select a subject...</option>
+                    <option value="Feature Request">Feature Request</option>
+                    <option value="General Information">General Information</option>
+                    <option value="Technical Support">Technical Support</option>
+                    <option value="Test Message">Test Message</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Test message..." required></textarea>
+            </div>
+            <button type="submit" id="submit-btn">
+                <span id="submit-text">Send Test Message</span>
+            </button>
+            <div id="form-message" class="message"></div>
+        </form>
+    </div>
+
+    <script>
+        const apiUrl = 'https://workers.keepintracks.com';
+        
+        // Check worker status on load
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('worker-status').textContent = '✓ Online';
+                document.getElementById('worker-status').style.color = 'green';
+            })
+            .catch(err => {
+                document.getElementById('worker-status').textContent = '✗ Offline';
+                document.getElementById('worker-status').style.color = 'red';
+            });
+
+        const form = document.getElementById('test-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const submitText = document.getElementById('submit-text');
+        const formMessage = document.getElementById('form-message');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const data = {
+                subject: formData.get('subject'),
+                email: formData.get('email'),
+                message: formData.get('message')
+            };
+            
+            submitBtn.disabled = true;
+            submitText.textContent = 'Sending...';
+            formMessage.className = 'message';
+            formMessage.textContent = '';
+            
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    formMessage.textContent = `Success! Message sent. ID: ${result.id || 'N/A'}`;
+                    formMessage.className = 'message message-success show';
+                    form.reset();
+                } else {
+                    throw new Error(result.error || 'Failed to send message');
+                }
+            } catch (error) {
+                formMessage.textContent = `Error: ${error.message}`;
+                formMessage.className = 'message message-error show';
+                console.error('Error:', error);
+            } finally {
+                submitBtn.disabled = false;
+                submitText.textContent = 'Send Test Message';
+            }
+        });
+    </script>
+</body>
+</html>

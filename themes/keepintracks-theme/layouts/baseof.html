@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="{{ .Language.Lang | default site.Language.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+  <script>
+    // Prevent flash of light theme - must run before page renders
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      let theme;
+      
+      if (savedTheme) {
+        theme = savedTheme;
+      } else {
+        // Check system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+        } else {
+          theme = 'light';
+        }
+      }
+      
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+</head>
+<body>
+  <div class="data-background">
+    <div class="grid-pattern"></div>
+    <svg class="connection-lines" width="100%" height="100%">
+      <line class="connection-line" x1="10%" y1="20%" x2="25%" y2="60%"></line>
+      <line class="connection-line" x1="25%" y1="60%" x2="35%" y2="45%"></line>
+      <line class="connection-line" x1="35%" y1="45%" x2="45%" y2="15%"></line>
+      <line class="connection-line" x1="45%" y1="15%" x2="55%" y2="25%"></line>
+      <line class="connection-line" x1="55%" y1="25%" x2="60%" y2="75%"></line>
+      <line class="connection-line" x1="60%" y1="75%" x2="75%" y2="35%"></line>
+      <line class="connection-line" x1="75%" y1="35%" x2="80%" y2="65%"></line>
+      <line class="connection-line" x1="20%" y1="50%" x2="40%" y2="85%"></line>
+      <line class="connection-line" x1="40%" y1="85%" x2="70%" y2="10%"></line>
+      <line class="connection-line" x1="15%" y1="80%" x2="20%" y2="50%"></line>
+      <line class="connection-line" x1="10%" y1="20%" x2="15%" y2="80%"></line>
+      <line class="connection-line" x1="70%" y1="10%" x2="80%" y2="65%"></line>
+    </svg>
+    <div class="data-points">
+      <div class="data-point" data-x="10%" data-y="20%"></div>
+      <div class="data-point" data-x="25%" data-y="60%"></div>
+      <div class="data-point" data-x="45%" data-y="15%"></div>
+      <div class="data-point" data-x="60%" data-y="75%"></div>
+      <div class="data-point" data-x="75%" data-y="35%"></div>
+      <div class="data-point" data-x="15%" data-y="80%"></div>
+      <div class="data-point" data-x="35%" data-y="45%"></div>
+      <div class="data-point" data-x="55%" data-y="25%"></div>
+      <div class="data-point" data-x="80%" data-y="65%"></div>
+      <div class="data-point" data-x="20%" data-y="50%"></div>
+      <div class="data-point" data-x="40%" data-y="85%"></div>
+      <div class="data-point" data-x="70%" data-y="10%"></div>
+    </div>
+  </div>
+  <header>
+    <nav>
+      <a href="{{ "/" | relURL }}">{{ site.Title }}</a>
+      <ul>
+        <li><a href="{{ "/" | relURL }}">{{ if eq .Lang "fr" }}Accueil{{ else }}Home{{ end }}</a></li>
+        <li><a href="{{ "/posts/" | relURL }}">{{ if eq .Lang "fr" }}Articles{{ else }}Posts{{ end }}</a></li>
+        <li><a href="{{ if eq .Lang "fr" }}/fr/a-propos/{{ else }}/about/{{ end }}">{{ if eq .Lang "fr" }}À propos{{ else }}About{{ end }}</a></li>
+        <li><a href="{{ "/contact/" | relURL }}">{{ if eq .Lang "fr" }}Contact{{ else }}Contact{{ end }}</a></li>
+        <li class="nav-controls">
+          <button id="theme-toggle" aria-label="Toggle theme">
+            <svg id="theme-icon-moon" class="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg id="theme-icon-sun" class="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+          <a href="{{ if eq .Lang "fr" }}/about/{{ else }}/fr/a-propos/{{ end }}" class="lang-toggle" aria-label="{{ if eq .Lang "fr" }}Switch to English{{ else }}Passer au français{{ end }}">
+            <span class="lang-code">{{ if eq .Lang "fr" }}EN{{ else }}FR{{ end }}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    <div class="footer-content">
+      <p class="footer-copyright">&copy; {{ now.Year }} {{ site.Title }}. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="{{ "/privacy/" | relURL }}" class="footer-link" aria-label="Privacy Policy">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <span>Privacy</span>
+        </a>
+        <a href="{{ "/terms/" | relURL }}" class="footer-link" aria-label="Terms and Conditions">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          <span>Terms</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="{{ "js/theme-toggle.js" | relURL }}"></script>
+</body>
+</html>

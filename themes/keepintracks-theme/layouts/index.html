@@ -1,0 +1,82 @@
+{{ define "main" }}
+<div class="homepage">
+  <div class="hero-section">
+    <h1>{{ .Title }}</h1>
+    <p class="hero-subtitle">{{ .Params.description | default "Personal tracking and business accounting solutions" }}</p>
+  </div>
+
+  <div class="products-section">
+    <div class="products-container">
+      <!-- Personal Product - Keepin'App -->
+      <div class="product-card product-card-personal">
+        <div class="product-badge personal-badge">Personal</div>
+        <h2 class="product-title">Keepin'App</h2>
+        <p class="product-tagline">Free Personal Tracking</p>
+        <p class="product-description">
+          Track your health, mind, and wealth all in one place. Monitor finances, net worth, weight, exercise, and journaling.
+        </p>
+        <div class="product-features">
+          <div class="feature-item">
+            <span class="feature-icon">💰</span>
+            <span>Finances & Net Worth</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">⚖️</span>
+            <span>Weight Tracking</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">💪</span>
+            <span>Exercise Tracking</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📝</span>
+            <span>Journaling</span>
+          </div>
+        </div>
+        <div class="product-highlight">100% Free</div>
+        <a href="{{ "/products/keepin-app/" | relURL }}" class="product-button product-button-primary">
+          Learn More →
+        </a>
+      </div>
+
+      <!-- Business Product - Keepin'Accounts -->
+      <div class="product-card product-card-business">
+        <div class="product-badge business-badge">Business</div>
+        <h2 class="product-title">Keepin'Accounts</h2>
+        <p class="product-tagline">Professional Accounting</p>
+        <p class="product-description">
+          Comprehensive accounting software for your business. Manage invoices, expenses, and financial reports.
+        </p>
+        <div class="product-features">
+          <div class="feature-item">
+            <span class="feature-icon">📊</span>
+            <span>Financial Reports</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🧾</span>
+            <span>Invoice Management</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📈</span>
+            <span>Expense Tracking</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📋</span>
+            <span>Tax Preparation</span>
+          </div>
+        </div>
+        <div class="product-highlight coming-soon">Coming Soon</div>
+        <a href="{{ "/products/keepin-accounts/" | relURL }}" class="product-button product-button-secondary">
+          Learn More →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {{ if .Content }}
+  <div class="content-section">
+    {{ .Content }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}

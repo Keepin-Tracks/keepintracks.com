@@ -1,0 +1,67 @@
+{{ define "main" }}
+<div class="posts-page">
+  <div class="posts-page-header">
+    <h1>{{ .Title }}</h1>
+    {{ if .Params.description }}
+    <p class="posts-page-description">{{ .Params.description }}</p>
+    {{ end }}
+  </div>
+
+  <div class="posts-list">
+    {{ range .Pages }}
+    <article class="post-card">
+      {{ if .Params.image }}
+      <div class="post-image">
+        <a href="{{ .RelPermalink }}">
+          <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy">
+        </a>
+      </div>
+      {{ else }}
+      <div class="post-image post-image-placeholder">
+        <div class="placeholder-content">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+        </div>
+      </div>
+      {{ end }}
+      <div class="post-content">
+        {{ if .Params.categories }}
+        <div class="post-categories">
+          {{ range first 1 .Params.categories }}
+          <span class="post-category">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+        <h3 class="post-title">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h3>
+        {{ if .Params.description }}
+        <p class="post-description">{{ .Params.description }}</p>
+        {{ else if .Summary }}
+        <p class="post-description">{{ .Summary | truncate 150 }}</p>
+        {{ end }}
+        <div class="post-meta">
+          <time datetime="{{ .Date | time.Format "2006-01-02" }}" class="post-date">
+            {{ .Date | time.Format "January 2, 2006" }}
+          </time>
+          {{ if .Params.linkedin }}
+          <a href="{{ .Params.linkedin }}" class="post-social" target="_blank" rel="noopener" aria-label="Discuss on LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            <span>Discuss</span>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+

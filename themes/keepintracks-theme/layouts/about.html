@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="about-page">
+  <div class="language-toggle">
+    {{ if eq .Lang "en" }}
+      <a href="/fr/a-propos/" class="lang-btn" aria-label="Français">FR</a>
+      <span class="lang-btn active" aria-label="English">EN</span>
+    {{ else }}
+      <span class="lang-btn active" aria-label="Français">FR</span>
+      <a href="/about/" class="lang-btn" aria-label="English">EN</a>
+    {{ end }}
+  </div>
+
+  <div class="about-hero">
+    <h1>{{ .Title }}</h1>
+    {{ if .Params.description }}
+    <p class="hero-subtitle">{{ .Params.description }}</p>
+    {{ end }}
+  </div>
+
+  <div class="about-content">
+    {{ .Content }}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,80 @@
+{{ define "main" }}
+<div class="contact-page">
+  <div class="contact-header">
+    <h1>{{ .Title }}</h1>
+    <p class="contact-intro">Have questions? We're here to help. Get in touch with us.</p>
+  </div>
+
+  <div class="contact-content">
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3 class="faq-question">Need help with Keepin'App?</h3>
+          <p class="faq-answer">Visit <a href="https://app.keepintracks.com" target="_blank" rel="noopener">app.keepintracks.com</a> to access your account. For support, use the contact form below.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Need help with Keepin'Accounts?</h3>
+          <p class="faq-answer">Keepin'Accounts is coming soon! Sign up to be notified when it's available or contact us for more information.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Forgot your password?</h3>
+          <p class="faq-answer">Use the password reset feature on the <a href="https://app.keepintracks.com" target="_blank" rel="noopener">login page</a>. If you need additional help, contact us below.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Have a feature request?</h3>
+          <p class="faq-answer">We'd love to hear your ideas! Use the contact form below and select "Feature Request" as the subject.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">General questions?</h3>
+          <p class="faq-answer">For general inquiries, information about our services, or partnership opportunities, please use the contact form below.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Technical support?</h3>
+          <p class="faq-answer">Experiencing technical issues? Contact us with details about the problem and we'll help you resolve it quickly.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form Section -->
+    <div class="contact-form-section">
+      <h2>Send us a Message</h2>
+      <form class="contact-form" action="mailto:info@keepintracks.com" method="get" enctype="text/plain">
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="">Select a subject...</option>
+            <option value="Feature Request">Feature Request</option>
+            <option value="General Information">General Information</option>
+            <option value="Technical Support">Technical Support</option>
+            <option value="Keepin'App Support">Keepin'App Support</option>
+            <option value="Keepin'Accounts Inquiry">Keepin'Accounts Inquiry</option>
+            <option value="Password Reset Help">Password Reset Help</option>
+            <option value="Account Issue">Account Issue</option>
+            <option value="Partnership Inquiry">Partnership Inquiry</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="body" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+        </div>
+        <button type="submit" class="submit-button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+          Send Message
+        </button>
+        <p class="form-note">This will open your email client. If it doesn't work, email us directly at <a href="mailto:info@keepintracks.com">info@keepintracks.com</a></p>
+      </form>
+    </div>
+  </div>
+</div>
+{{ end }}
+

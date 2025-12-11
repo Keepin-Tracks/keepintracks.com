@@ -1,0 +1,17 @@
+baseURL = 'https://keepintracks.com/'
+languageCode = 'en'
+title = 'KeepinTracks'
+theme = 'keepintracks-theme'
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.en]
+    languageName = 'English'
+    weight = 1
+    contentDir = 'content'
+    
+  [languages.fr]
+    languageName = 'Français'
+    weight = 2
+    contentDir = 'content'

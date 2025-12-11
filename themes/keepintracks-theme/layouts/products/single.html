@@ -1,0 +1,109 @@
+{{ define "main" }}
+  <article class="product-page">
+    <div class="product-header">
+      <a href="{{ "/" | relURL }}" class="back-link">← Back to Home</a>
+      <div class="product-title-section">
+        <h1>{{ .Title }}</h1>
+        {{ if .Params.description }}
+        <p class="product-subtitle">{{ .Params.description }}</p>
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="product-hero">
+      <div class="product-hero-content">
+        <div class="product-intro">
+          {{ if .Params.description }}
+            <p class="product-intro-text">{{ .Params.description }}</p>
+          {{ end }}
+          {{ $firstPara := index (split .Content "\n\n") 1 }}
+          {{ if $firstPara }}
+            <p class="product-intro-description">{{ $firstPara | replaceRE `\*\*` "" | plainify | truncate 200 }}</p>
+          {{ end }}
+        </div>
+        <div class="product-app-preview">
+          <div class="app-mockup {{ if eq .Title "Keepin'App" }}app-mockup-personal{{ else }}app-mockup-business{{ end }}">
+            <div class="app-mockup-header">
+              <div class="app-mockup-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="app-mockup-title">{{ .Title }}</div>
+            </div>
+            <div class="app-mockup-content">
+              {{ if eq .Title "Keepin'App" }}
+                <div class="mockup-screen personal-screen">
+                  <div class="mockup-nav">
+                    <div class="mockup-nav-item active"></div>
+                    <div class="mockup-nav-item"></div>
+                    <div class="mockup-nav-item"></div>
+                    <div class="mockup-nav-item"></div>
+                  </div>
+                  <div class="mockup-chart">
+                    <div class="chart-bar" style="height: 60%"></div>
+                    <div class="chart-bar" style="height: 80%"></div>
+                    <div class="chart-bar" style="height: 45%"></div>
+                    <div class="chart-bar" style="height: 90%"></div>
+                    <div class="chart-bar" style="height: 70%"></div>
+                  </div>
+                  <div class="mockup-stats">
+                    <div class="mockup-stat">
+                      <div class="stat-icon">💰</div>
+                      <div class="stat-content">
+                        <div class="stat-label"></div>
+                        <div class="stat-value"></div>
+                      </div>
+                    </div>
+                    <div class="mockup-stat">
+                      <div class="stat-icon">⚖️</div>
+                      <div class="stat-content">
+                        <div class="stat-label"></div>
+                        <div class="stat-value"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {{ else }}
+                <div class="mockup-screen business-screen">
+                  <div class="mockup-sidebar">
+                    <div class="sidebar-item active"></div>
+                    <div class="sidebar-item"></div>
+                    <div class="sidebar-item"></div>
+                    <div class="sidebar-item"></div>
+                  </div>
+                  <div class="mockup-main">
+                    <div class="mockup-table-header">
+                      <div class="table-col"></div>
+                      <div class="table-col"></div>
+                      <div class="table-col"></div>
+                    </div>
+                    <div class="mockup-table-row"></div>
+                    <div class="mockup-table-row"></div>
+                    <div class="mockup-table-row"></div>
+                    <div class="mockup-table-row"></div>
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-features-detailed">
+      {{ .Content }}
+    </div>
+
+    <div class="product-cta">
+      {{ if eq .Title "Keepin'App" }}
+        <a href="https://app.keepintracks.com" class="cta-button cta-primary" target="_blank" rel="noopener">
+          Open Keepin'App →
+        </a>
+      {{ else }}
+        <a href="{{ "/contact/" | relURL }}" class="cta-button cta-secondary">
+          Get Notified When Available →
+        </a>
+      {{ end }}
+    </div>
+  </article>
+{{ end }}
+

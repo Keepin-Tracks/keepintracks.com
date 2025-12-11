@@ -1,0 +1,13 @@
+{
+  "name": "kt-website",
+  "version": "1.0.0",
+  "description": "KeepinTracks website",
+  "scripts": {
+    "dev": "hugo server",
+    "build": "hugo --minify"
+  },
+  "dependencies": {
+    "resend": "^6.6.0"
+  },
+  "devDependencies": {}
+}
