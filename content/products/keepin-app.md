@@ -1,11 +1,11 @@
 ---
-title: "Keepin'App"
+title: "Keepin' App"
 description: "Free personal tracking app for health, mind, and wealth"
 ---
 
 **Free Personal Tracking App**
 
-Keepin'App is your all-in-one solution for tracking everything that matters in your personal life.
+Keepin' App is your all-in-one solution for tracking everything that matters in your personal life.
 
 ## Track Your Health
 
@@ -25,7 +25,7 @@ Take control of your finances with powerful tracking tools:
 - Set budgets and financial goals
 - Get insights into your spending habits
 
-## Why Choose Keepin'App?
+## Why Choose Keepin' App?
 
 - **100% Free** - No hidden costs, no subscriptions
 - **Privacy First** - Your data is secure and private
@@ -35,7 +35,7 @@ Take control of your finances with powerful tracking tools:
 
 ## Get Started
 
-Start tracking your life today with Keepin'App - completely free!
+Start tracking your life today with Keepin' App - completely free!
 
-[Open Keepin'App →](https://app.keepintracks.com)
+[Open Keepin' App →](https://app.keepintracks.com)
 

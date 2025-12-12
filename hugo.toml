@@ -1,6 +1,6 @@
 baseURL = 'https://keepintracks.com/'
 languageCode = 'en'
-title = 'KeepinTracks'
+title = "Keepin' Tracks"
 theme = 'keepintracks-theme'
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = false

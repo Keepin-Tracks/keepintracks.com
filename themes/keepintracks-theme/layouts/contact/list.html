@@ -2,109 +2,193 @@
 <div class="contact-page">
   <div class="contact-header">
     <h1>{{ .Title }}</h1>
-    <p class="contact-intro">Have questions? We're here to help. Get in touch with us.</p>
+    <p class="contact-intro">{{ .Params.intro | default "Have questions? We're here to help. Get in touch with us." }}</p>
   </div>
 
   <div class="contact-content">
     <!-- FAQ Section -->
     <div class="faq-section">
-      <h2>Frequently Asked Questions</h2>
+      <h2>{{ .Params.faq_title | default "Frequently Asked Questions" }}</h2>
       <div class="faq-grid">
-        <div class="faq-item" aria-expanded="false">
-          <button class="faq-question-btn" type="button">
-            <span>Need help with Keepin'App?</span>
-            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p>Visit <a href="https://app.keepintracks.com" target="_blank" rel="noopener">app.keepintracks.com</a> to access your account. For support, use the contact form below.</p>
+        {{ if eq .Lang "fr" }}
+          <!-- French FAQ -->
+          <div class="faq-item" aria-expanded="false">
+            <button class="faq-question-btn" type="button">
+              <span>Besoin d'aide avec Keepin' App ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Visitez <a href="https://app.keepintracks.com" target="_blank" rel="noopener">app.keepintracks.com</a> pour accéder à votre compte. Pour le support, utilisez le formulaire de contact ci-dessous.</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" aria-expanded="false">
-          <button class="faq-question-btn" type="button">
-            <span>Need help with Keepin'Accounts?</span>
-            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p>Keepin'Accounts is coming soon! Sign up to be notified when it's available or contact us for more information.</p>
+          <div class="faq-item" aria-expanded="false">
+            <button class="faq-question-btn" type="button">
+              <span>Besoin d'aide avec Keepin' Accounts ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Keepin' Accounts arrive bientôt ! Inscrivez-vous pour être notifié quand il sera disponible ou contactez-nous pour plus d'informations.</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" aria-expanded="false">
-          <button class="faq-question-btn" type="button">
-            <span>Forgot your password?</span>
-            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p>Use the password reset feature on the <a href="https://app.keepintracks.com" target="_blank" rel="noopener">login page</a>. If you need additional help, contact us below.</p>
+          <div class="faq-item" aria-expanded="false">
+            <button class="faq-question-btn" type="button">
+              <span>Mot de passe oublié ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Utilisez la fonction de réinitialisation de mot de passe sur la <a href="https://app.keepintracks.com" target="_blank" rel="noopener">page de connexion</a>. Si vous avez besoin d'aide supplémentaire, contactez-nous ci-dessous.</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" aria-expanded="false">
-          <button class="faq-question-btn" type="button">
-            <span>Have a feature request?</span>
-            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p>We'd love to hear your ideas! Use the contact form below and select "Feature Request" as the subject.</p>
+          <div class="faq-item" aria-expanded="false">
+            <button class="faq-question-btn" type="button">
+              <span>Vous avez une demande de fonctionnalité ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Nous aimerions entendre vos idées ! Utilisez le formulaire de contact ci-dessous et sélectionnez "Demande de fonctionnalité" comme sujet.</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" aria-expanded="false">
-          <button class="faq-question-btn" type="button">
-            <span>General questions?</span>
-            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p>For general inquiries, information about our services, or partnership opportunities, please use the contact form below.</p>
+          <div class="faq-item" aria-expanded="false">
+            <button class="faq-question-btn" type="button">
+              <span>Questions générales ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Pour les demandes générales, les informations sur nos services ou les opportunités de partenariat, veuillez utiliser le formulaire de contact ci-dessous.</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item" aria-expanded="false">
-          <button class="faq-question-btn" type="button">
-            <span>Technical support?</span>
-            <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p>Experiencing technical issues? Contact us with details about the problem and we'll help you resolve it quickly.</p>
+          <div class="faq-item" aria-expanded="false">
+            <button class="faq-question-btn" type="button">
+              <span>Support technique ?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Vous rencontrez des problèmes techniques ? Contactez-nous avec les détails du problème et nous vous aiderons à le résoudre rapidement.</p>
+            </div>
           </div>
-        </div>
+        {{ else }}
+          <!-- English FAQ -->
+          <div class="faq-item" aria-expanded="false">
+            <button class="faq-question-btn" type="button">
+              <span>Need help with Keepin'App?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Visit <a href="https://app.keepintracks.com" target="_blank" rel="noopener">app.keepintracks.com</a> to access your account. For support, use the contact form below.</p>
+            </div>
+          </div>
+          <div class="faq-item" aria-expanded="false">
+            <button class="faq-question-btn" type="button">
+              <span>Need help with Keepin' Accounts?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Keepin' Accounts is coming soon! Sign up to be notified when it's available or contact us for more information.</p>
+            </div>
+          </div>
+          <div class="faq-item" aria-expanded="false">
+            <button class="faq-question-btn" type="button">
+              <span>Forgot your password?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Use the password reset feature on the <a href="https://app.keepintracks.com" target="_blank" rel="noopener">login page</a>. If you need additional help, contact us below.</p>
+            </div>
+          </div>
+          <div class="faq-item" aria-expanded="false">
+            <button class="faq-question-btn" type="button">
+              <span>Have a feature request?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>We'd love to hear your ideas! Use the contact form below and select "Feature Request" as the subject.</p>
+            </div>
+          </div>
+          <div class="faq-item" aria-expanded="false">
+            <button class="faq-question-btn" type="button">
+              <span>General questions?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>For general inquiries, information about our services, or partnership opportunities, please use the contact form below.</p>
+            </div>
+          </div>
+          <div class="faq-item" aria-expanded="false">
+            <button class="faq-question-btn" type="button">
+              <span>Technical support?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Experiencing technical issues? Contact us with details about the problem and we'll help you resolve it quickly.</p>
+            </div>
+          </div>
+        {{ end }}
       </div>
     </div>
 
     <!-- Contact Form Section -->
     <div class="contact-form-section">
-      <h2>Send us a Message</h2>
+      <h2>{{ .Params.form_title | default "Send us a Message" }}</h2>
       <form class="contact-form" id="contact-form">
         <div class="form-group">
-          <label for="subject">Subject</label>
+          <label for="subject">{{ if eq .Lang "fr" }}Sujet{{ else }}Subject{{ end }}</label>
           <select id="subject" name="subject" required>
-            <option value="">Select a subject...</option>
-            <option value="Feature Request">Feature Request</option>
-            <option value="General Information">General Information</option>
-            <option value="Technical Support">Technical Support</option>
-            <option value="Keepin'App Support">Keepin'App Support</option>
-            <option value="Keepin'Accounts Inquiry">Keepin'Accounts Inquiry</option>
-            <option value="Password Reset Help">Password Reset Help</option>
-            <option value="Account Issue">Account Issue</option>
-            <option value="Partnership Inquiry">Partnership Inquiry</option>
-            <option value="Other">Other</option>
+            {{ if eq .Lang "fr" }}
+              <option value="">{{ if eq .Lang "fr" }}Sélectionnez un sujet...{{ else }}Select a subject...{{ end }}</option>
+              <option value="Feature Request">Demande de fonctionnalité</option>
+              <option value="General Information">Informations générales</option>
+              <option value="Technical Support">Support technique</option>
+              <option value="Keepin' App Support">Support Keepin' App</option>
+              <option value="Keepin' Accounts Inquiry">Demande Keepin' Accounts</option>
+              <option value="Password Reset Help">Aide réinitialisation mot de passe</option>
+              <option value="Account Issue">Problème de compte</option>
+              <option value="Partnership Inquiry">Demande de partenariat</option>
+              <option value="Other">Autre</option>
+            {{ else }}
+              <option value="">Select a subject...</option>
+              <option value="Feature Request">Feature Request</option>
+              <option value="General Information">General Information</option>
+              <option value="Technical Support">Technical Support</option>
+              <option value="Keepin' App Support">Keepin' App Support</option>
+              <option value="Keepin' Accounts Inquiry">Keepin' Accounts Inquiry</option>
+              <option value="Password Reset Help">Password Reset Help</option>
+              <option value="Account Issue">Account Issue</option>
+              <option value="Partnership Inquiry">Partnership Inquiry</option>
+              <option value="Other">Other</option>
+            {{ end }}
           </select>
         </div>
         <div class="form-group">
-          <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+          <label for="email">{{ if eq .Lang "fr" }}Votre Email{{ else }}Your Email{{ end }}</label>
+          <input type="email" id="email" name="email" placeholder="{{ if eq .Lang "fr" }}votre.email@exemple.com{{ else }}your.email@example.com{{ end }}" required>
         </div>
         <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+          <label for="message">{{ if eq .Lang "fr" }}Message{{ else }}Message{{ end }}</label>
+          <textarea id="message" name="message" rows="6" placeholder="{{ if eq .Lang "fr" }}Dites-nous comment nous pouvons vous aider...{{ else }}Tell us how we can help you...{{ end }}" required></textarea>
         </div>
         <div id="form-message" class="form-message"></div>
         <button type="submit" class="submit-button" id="submit-btn">
@@ -112,9 +196,9 @@
             <line x1="22" y1="2" x2="11" y2="13"></line>
             <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
           </svg>
-          <span id="submit-text">Send Message</span>
+          <span id="submit-text">{{ if eq .Lang "fr" }}Envoyer le message{{ else }}Send Message{{ end }}</span>
         </button>
-        <p class="form-note">Or email us directly at <a href="mailto:info@keepintracks.com">info@keepintracks.com</a></p>
+        <p class="form-note">{{ if eq .Lang "fr" }}Ou écrivez-nous directement à{{ else }}Or email us directly at{{ end }} <a href="mailto:info@keepintracks.com">info@keepintracks.com</a></p>
       </form>
     </div>
   </div>
@@ -122,4 +206,3 @@
 <script src="{{ "js/contact-form.js" | relURL }}"></script>
 <script src="{{ "js/faq-accordion.js" | relURL }}"></script>
 {{ end }}
-

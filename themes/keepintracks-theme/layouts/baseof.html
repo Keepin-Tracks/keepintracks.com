@@ -4,6 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="{{ "/favicon.svg" | relURL }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ "/favicon-96x96.png" | relURL }}">
+  <link rel="icon" type="image/x-icon" href="{{ "/favicon.ico" | relURL }}">
+  <link rel="apple-touch-icon" href="{{ "/apple-touch-icon.png" | relURL }}">
+  <link rel="manifest" href="{{ "/site.webmanifest" | relURL }}">
+  
   <script>
     // Prevent flash of light theme - must run before page renders
     (function() {
@@ -65,9 +73,9 @@
       <a href="{{ "/" | relURL }}">{{ site.Title }}</a>
       <ul>
         <li><a href="{{ "/" | relURL }}">{{ if eq .Lang "fr" }}Accueil{{ else }}Home{{ end }}</a></li>
-        <li><a href="{{ "/posts/" | relURL }}">{{ if eq .Lang "fr" }}Articles{{ else }}Posts{{ end }}</a></li>
+        <li><a href="{{ if eq .Lang "fr" }}/fr/posts/{{ else }}/posts/{{ end }}">{{ if eq .Lang "fr" }}Articles{{ else }}Posts{{ end }}</a></li>
         <li><a href="{{ if eq .Lang "fr" }}/fr/a-propos/{{ else }}/about/{{ end }}">{{ if eq .Lang "fr" }}À propos{{ else }}About{{ end }}</a></li>
-        <li><a href="{{ "/contact/" | relURL }}">{{ if eq .Lang "fr" }}Contact{{ else }}Contact{{ end }}</a></li>
+        <li><a href="{{ if eq .Lang "fr" }}/fr/contact/{{ else }}/contact/{{ end }}">{{ if eq .Lang "fr" }}Contact{{ else }}Contact{{ end }}</a></li>
         <li class="nav-controls">
           <button id="theme-toggle" aria-label="Toggle theme">
             <svg id="theme-icon-moon" class="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -85,7 +93,38 @@
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
           </button>
-          <a href="{{ if eq .Lang "fr" }}/about/{{ else }}/fr/a-propos/{{ end }}" class="lang-toggle" aria-label="{{ if eq .Lang "fr" }}Switch to English{{ else }}Passer au français{{ end }}">
+          {{- $currentLang := .Lang -}}
+          {{- $targetLang := "en" -}}
+          {{- if eq $currentLang "en" -}}
+            {{- $targetLang = "fr" -}}
+          {{- end -}}
+          {{- $translatedPage := false -}}
+          {{- range .Translations -}}
+            {{- if eq .Lang $targetLang -}}
+              {{- $translatedPage = . -}}
+            {{- end -}}
+          {{- end -}}
+          {{- $targetURL := "" -}}
+          {{- if $translatedPage -}}
+            {{- $targetURL = $translatedPage.RelPermalink -}}
+          {{- else -}}
+            {{- $currentPath := .RelPermalink -}}
+            {{- if eq $currentLang "fr" -}}
+              {{- $targetURL = replaceRE "^/fr/" "/" $currentPath -}}
+              {{- if eq $targetURL "/a-propos/" -}}
+                {{- $targetURL = "/about/" -}}
+              {{- end -}}
+            {{- else -}}
+              {{- if eq $currentPath "/about/" -}}
+                {{- $targetURL = "/fr/a-propos/" -}}
+              {{- else if eq $currentPath "/" -}}
+                {{- $targetURL = "/fr/" -}}
+              {{- else -}}
+                {{- $targetURL = printf "/fr%s" $currentPath -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+          <a href="{{ $targetURL }}" class="lang-toggle" aria-label="{{ if eq .Lang "fr" }}Switch to English{{ else }}Passer au français{{ end }}">
             <span class="lang-code">{{ if eq .Lang "fr" }}EN{{ else }}FR{{ end }}</span>
           </a>
         </li>
@@ -97,16 +136,16 @@
   </main>
   <footer>
     <div class="footer-content">
-      <p class="footer-copyright">&copy; {{ now.Year }} {{ site.Title }}. All rights reserved.</p>
+      <p class="footer-copyright">&copy; {{ now.Year }} {{ site.Title }}. {{ if eq .Lang "fr" }}Tous droits réservés.{{ else }}All rights reserved.{{ end }}</p>
       <div class="footer-links">
-        <a href="{{ "/privacy/" | relURL }}" class="footer-link" aria-label="Privacy Policy">
+        <a href="{{ if eq .Lang "fr" }}/fr/confidentialite/{{ else }}/privacy/{{ end }}" class="footer-link" aria-label="{{ if eq .Lang "fr" }}Politique de Confidentialité{{ else }}Privacy Policy{{ end }}">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
             <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
           </svg>
-          <span>Privacy</span>
+          <span>{{ if eq .Lang "fr" }}Confidentialité{{ else }}Privacy{{ end }}</span>
         </a>
-        <a href="{{ "/terms/" | relURL }}" class="footer-link" aria-label="Terms and Conditions">
+        <a href="{{ if eq .Lang "fr" }}/fr/conditions/{{ else }}/terms/{{ end }}" class="footer-link" aria-label="{{ if eq .Lang "fr" }}Conditions Générales{{ else }}Terms and Conditions{{ end }}">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
             <polyline points="14 2 14 8 20 8"></polyline>
@@ -114,7 +153,7 @@
             <line x1="16" y1="17" x2="8" y2="17"></line>
             <polyline points="10 9 9 9 8 9"></polyline>
           </svg>
-          <span>Terms</span>
+          <span>{{ if eq .Lang "fr" }}Conditions{{ else }}Terms{{ end }}</span>
         </a>
       </div>
     </div>

@@ -2,72 +2,90 @@
 <div class="homepage">
   <div class="hero-section">
     <h1>{{ .Title }}</h1>
-    <p class="hero-subtitle">{{ .Params.description | default "Personal tracking and business accounting solutions" }}</p>
+    <p class="hero-subtitle">
+      {{ if .Params.description }}
+        {{ .Params.description }}
+      {{ else }}
+        {{ if eq .Lang "fr" }}
+          Solutions de suivi personnel et de comptabilité professionnelle
+        {{ else }}
+          Personal tracking and business accounting solutions
+        {{ end }}
+      {{ end }}
+    </p>
   </div>
 
   <div class="products-section">
     <div class="products-container">
-      <!-- Personal Product - Keepin'App -->
+      <!-- Personal Product - Keepin' App -->
       <div class="product-card product-card-personal">
-        <div class="product-badge personal-badge">Personal</div>
-        <h2 class="product-title">Keepin'App</h2>
-        <p class="product-tagline">Free Personal Tracking</p>
+        <div class="product-badge personal-badge">{{ if eq .Lang "fr" }}Personnel{{ else }}Personal{{ end }}</div>
+        <h2 class="product-title">Keepin' App</h2>
+        <p class="product-tagline">{{ if eq .Lang "fr" }}Suivi Personnel Gratuit{{ else }}Free Personal Tracking{{ end }}</p>
         <p class="product-description">
-          Track your health, mind, and wealth all in one place. Monitor finances, net worth, weight, exercise, and journaling.
+          {{ if eq .Lang "fr" }}
+            Suivez votre santé, votre esprit et votre richesse en un seul endroit. Surveillez les finances, la valeur nette, le poids, l'exercice et le journal.
+          {{ else }}
+            Track your health, mind, and wealth all in one place. Monitor finances, net worth, weight, exercise, and journaling.
+          {{ end }}
         </p>
         <div class="product-features">
           <div class="feature-item">
             <span class="feature-icon">💰</span>
-            <span>Finances & Net Worth</span>
+            <span>{{ if eq .Lang "fr" }}Finances et Valeur Nette{{ else }}Finances & Net Worth{{ end }}</span>
           </div>
           <div class="feature-item">
             <span class="feature-icon">⚖️</span>
-            <span>Weight Tracking</span>
+            <span>{{ if eq .Lang "fr" }}Suivi du Poids{{ else }}Weight Tracking{{ end }}</span>
           </div>
           <div class="feature-item">
             <span class="feature-icon">💪</span>
-            <span>Exercise Tracking</span>
+            <span>{{ if eq .Lang "fr" }}Suivi de l'Exercice{{ else }}Exercise Tracking{{ end }}</span>
           </div>
           <div class="feature-item">
             <span class="feature-icon">📝</span>
-            <span>Journaling</span>
+            <span>{{ if eq .Lang "fr" }}Journal{{ else }}Journaling{{ end }}</span>
           </div>
         </div>
-        <div class="product-highlight">100% Free</div>
-        <a href="{{ "/products/keepin-app/" | relURL }}" class="product-button product-button-primary">
-          Learn More →
+        <div class="product-highlight">{{ if eq .Lang "fr" }}100% Gratuit{{ else }}100% Free{{ end }}</div>
+        <a href="{{ if eq .Lang "fr" }}/fr/products/keepin-app/{{ else }}/products/keepin-app/{{ end }}" class="product-button product-button-primary">
+          {{ if eq .Lang "fr" }}En Savoir Plus →{{ else }}Learn More →{{ end }}
         </a>
       </div>
 
-      <!-- Business Product - Keepin'Accounts -->
+      <!-- Business Product - Keepin' Accounts -->
       <div class="product-card product-card-business">
-        <div class="product-badge business-badge">Business</div>
-        <h2 class="product-title">Keepin'Accounts</h2>
-        <p class="product-tagline">Professional Accounting</p>
+        <div class="product-badge business-badge">{{ if eq .Lang "fr" }}Entreprise{{ else }}Business{{ end }}</div>
+        <h2 class="product-title">Keepin' Accounts</h2>
+        <p class="product-tagline">{{ if eq .Lang "fr" }}Comptabilité Professionnelle{{ else }}Professional Accounting{{ end }}</p>
         <p class="product-description">
-          Comprehensive accounting software for your business. Manage invoices, expenses, and financial reports.
+          {{ if eq .Lang "fr" }}
+            Logiciel de comptabilité complet pour votre entreprise. Gérez les factures, les dépenses et les rapports financiers.
+          {{ else }}
+            Comprehensive accounting software for your business. Manage invoices, expenses, and financial reports.
+          {{ end }}
         </p>
         <div class="product-features">
           <div class="feature-item">
             <span class="feature-icon">📊</span>
-            <span>Financial Reports</span>
+            <span>{{ if eq .Lang "fr" }}Rapports Financiers{{ else }}Financial Reports{{ end }}</span>
           </div>
           <div class="feature-item">
             <span class="feature-icon">🧾</span>
-            <span>Invoice Management</span>
+            <span>{{ if eq .Lang "fr" }}Gestion des Factures{{ else }}Invoice Management{{ end }}</span>
           </div>
           <div class="feature-item">
             <span class="feature-icon">📈</span>
-            <span>Expense Tracking</span>
+            <span>{{ if eq .Lang "fr" }}Suivi des Dépenses{{ else }}Expense Tracking{{ end }}</span>
           </div>
           <div class="feature-item">
             <span class="feature-icon">📋</span>
-            <span>Tax Preparation</span>
+            <span>{{ if eq .Lang "fr" }}Préparation Fiscale{{ else }}Tax Preparation{{ end }}</span>
           </div>
         </div>
-        <div class="product-highlight coming-soon">Coming Soon</div>
-        <a href="{{ "/products/keepin-accounts/" | relURL }}" class="product-button product-button-secondary">
-          Learn More →
+        <div class="product-highlight coming-soon">{{ if eq .Lang "fr" }}Bientôt Disponible{{ else }}Coming Soon{{ end }}</div>
+        <a href="{{ if eq .Lang "fr" }}/fr/products/keepin-accounts/{{ else }}/products/keepin-accounts/{{ end }}" class="product-button product-button-secondary">
+          {{ if eq .Lang "fr" }}En Savoir Plus →{{ else }}Learn More →{{ end }}
         </a>
       </div>
     </div>
@@ -75,8 +93,8 @@
 
   <div class="posts-section">
     <div class="posts-header">
-      <h2>Latest Posts</h2>
-      <a href="{{ "/posts/" | relURL }}" class="view-all-link">View All →</a>
+      <h2>{{ if eq .Lang "fr" }}Derniers Articles{{ else }}Latest Posts{{ end }}</h2>
+      <a href="{{ if eq .Lang "fr" }}/fr/posts/{{ else }}/posts/{{ end }}" class="view-all-link">{{ if eq .Lang "fr" }}Voir tout →{{ else }}View All →{{ end }}</a>
     </div>
     <div class="posts-container">
       {{ range first 3 (where site.RegularPages "Section" "posts") }}
@@ -113,16 +131,20 @@
             {{ end }}
             <div class="post-meta">
               <time datetime="{{ .Date | time.Format "2006-01-02" }}" class="post-date">
-                {{ .Date | time.Format "January 2, 2006" }}
+                {{ if eq .Lang "fr" }}
+                  {{ .Date | time.Format "02/01/2006" }}
+                {{ else }}
+                  {{ .Date | time.Format "January 2, 2006" }}
+                {{ end }}
               </time>
               {{ if .Params.linkedin }}
-              <span class="post-social" onclick="event.stopPropagation(); window.open('{{ .Params.linkedin }}', '_blank', 'noopener,noreferrer');" aria-label="Discuss on LinkedIn">
+              <span class="post-social" onclick="event.stopPropagation(); window.open('{{ .Params.linkedin }}', '_blank', 'noopener,noreferrer');" aria-label="{{ if eq .Lang "fr" }}Discuter sur LinkedIn{{ else }}Discuss on LinkedIn{{ end }}">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                   <rect x="2" y="9" width="4" height="12"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
                 </svg>
-                <span>Discuss</span>
+                <span>{{ if eq .Lang "fr" }}Discuter{{ else }}Discuss{{ end }}</span>
               </span>
               {{ end }}
             </div>

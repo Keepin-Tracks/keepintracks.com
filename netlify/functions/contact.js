@@ -42,7 +42,7 @@ exports.handler = async (event, context) => {
 
     // Send email
     const { data, error } = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || 'KeepinTracks <contact@keepintracks.com>',
+      from: process.env.RESEND_FROM_EMAIL || 'KeepinTracks <info@keepintracks.com>',
       to: process.env.RESEND_TO_EMAIL || 'info@keepintracks.com',
       replyTo: email,
       subject: `[Contact Form] ${subject}`,

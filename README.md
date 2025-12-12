@@ -1,4 +1,4 @@
-# KeepinTracks Website
+# Keepin' Tracks Website
 
 Basic Hugo website for keepintracks.com
 

@@ -1,14 +1,14 @@
 ---
-title: "Master Your Finances with Keepin'App's Financial Tracking"
+title: "Master Your Finances with Keepin' App's Financial Tracking"
 date: 2024-11-01
-description: "Discover how Keepin'App helps you track finances, monitor net worth, set budgets, and gain insights into your spending habits."
+description: "Discover how Keepin' App helps you track finances, monitor net worth, set budgets, and gain insights into your spending habits."
 image: "/images/posts/finances.jpg"
 categories: ["Features", "Finance"]
 linkedin: "https://www.linkedin.com/company/keepintracks"
 draft: true
 ---
 
-Take control of your financial future with Keepin'App's comprehensive financial tracking features.
+Take control of your financial future with Keepin' App's comprehensive financial tracking features.
 
 ## Track Income and Expenses
 

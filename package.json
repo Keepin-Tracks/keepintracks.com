@@ -1,7 +1,7 @@
 {
   "name": "kt-website",
   "version": "1.0.0",
-  "description": "KeepinTracks website",
+  "description": "Keepin' Tracks website",
   "scripts": {
     "dev": "hugo server",
     "build": "hugo --minify"

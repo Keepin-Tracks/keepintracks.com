@@ -14,6 +14,36 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
   }
   
+  // Detect language from HTML lang attribute or URL
+  const htmlLang = document.documentElement.lang || 'en';
+  const isFrench = htmlLang.startsWith('fr') || window.location.pathname.startsWith('/fr/');
+  
+  // Translation strings
+  const translations = {
+    en: {
+      sending: 'Sending...',
+      sendMessage: 'Send Message',
+      fillAllFields: 'Please fill in all required fields.',
+      invalidEmail: 'Please enter a valid email address.',
+      success: 'Message sent successfully! We\'ll get back to you soon.',
+      failed: 'Failed to send message. Please try again or email us directly at info@keepintracks.com',
+      networkError: 'Network error. Please check your connection and try again.',
+      tryAgain: 'Failed to send message. Please try again.'
+    },
+    fr: {
+      sending: 'Envoi en cours...',
+      sendMessage: 'Envoyer le message',
+      fillAllFields: 'Veuillez remplir tous les champs requis.',
+      invalidEmail: 'Veuillez entrer une adresse e-mail valide.',
+      success: 'Message envoyé avec succès ! Nous vous répondrons bientôt.',
+      failed: 'Échec de l\'envoi du message. Veuillez réessayer ou nous écrire directement à info@keepintracks.com',
+      networkError: 'Erreur réseau. Veuillez vérifier votre connexion et réessayer.',
+      tryAgain: 'Échec de l\'envoi du message. Veuillez réessayer.'
+    }
+  };
+  
+  const t = translations[isFrench ? 'fr' : 'en'];
+  
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
     
@@ -25,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Validate form data
     if (!subject || !email || !message) {
-      formMessage.textContent = 'Please fill in all required fields.';
+      formMessage.textContent = t.fillAllFields;
       formMessage.className = 'form-message form-message-error';
       return;
     }
@@ -33,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      formMessage.textContent = 'Please enter a valid email address.';
+      formMessage.textContent = t.invalidEmail;
       formMessage.className = 'form-message form-message-error';
       return;
     }
@@ -46,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Disable submit button and show loading state
     submitBtn.disabled = true;
-    submitText.textContent = 'Sending...';
+    submitText.textContent = t.sending;
     formMessage.textContent = '';
     formMessage.className = 'form-message';
     
@@ -65,20 +95,20 @@ document.addEventListener('DOMContentLoaded', function() {
       const result = await response.json();
       
       if (response.ok) {
-        formMessage.textContent = 'Message sent successfully! We\'ll get back to you soon.';
+        formMessage.textContent = t.success;
         formMessage.className = 'form-message form-message-success';
         form.reset();
       } else {
         // Handle error response
-        const errorMessage = result.error || 'Failed to send message. Please try again.';
+        const errorMessage = result.error || t.tryAgain;
         throw new Error(errorMessage);
       }
     } catch (error) {
       // Handle network errors or other exceptions
-      let errorMessage = 'Failed to send message. Please try again or email us directly at info@keepintracks.com';
+      let errorMessage = t.failed;
       
       if (error instanceof TypeError && error.message.includes('fetch')) {
-        errorMessage = 'Network error. Please check your connection and try again.';
+        errorMessage = t.networkError;
       } else if (error.message) {
         errorMessage = error.message;
       }
@@ -89,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } finally {
       // Re-enable submit button
       submitBtn.disabled = false;
-      submitText.textContent = 'Send Message';
+      submitText.textContent = t.sendMessage;
     }
   });
 });

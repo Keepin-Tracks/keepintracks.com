@@ -22,7 +22,7 @@
           {{ end }}
         </div>
         <div class="product-app-preview">
-          <div class="app-mockup {{ if eq .Title "Keepin'App" }}app-mockup-personal{{ else }}app-mockup-business{{ end }}">
+          <div class="app-mockup {{ if eq .Title "Keepin' App" }}app-mockup-personal{{ else }}app-mockup-business{{ end }}">
             <div class="app-mockup-header">
               <div class="app-mockup-dots">
                 <span></span><span></span><span></span>
@@ -30,7 +30,7 @@
               <div class="app-mockup-title">{{ .Title }}</div>
             </div>
             <div class="app-mockup-content">
-              {{ if eq .Title "Keepin'App" }}
+              {{ if eq .Title "Keepin' App" }}
                 <div class="mockup-screen personal-screen">
                   <div class="mockup-nav">
                     <div class="mockup-nav-item active"></div>
@@ -94,9 +94,9 @@
     </div>
 
     <div class="product-cta">
-      {{ if eq .Title "Keepin'App" }}
+      {{ if eq .Title "Keepin' App" }}
         <a href="https://app.keepintracks.com" class="cta-button cta-primary" target="_blank" rel="noopener">
-          Open Keepin'App →
+          Open Keepin' App →
         </a>
       {{ else }}
         <a href="{{ "/contact/" | relURL }}" class="cta-button cta-secondary">

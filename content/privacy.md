@@ -1,12 +1,12 @@
 ---
 title: "Privacy Policy"
-description: "Privacy Policy for KeepinTracks"
-lastUpdated: "December 2024"
+description: "Privacy Policy for Keepin' Tracks"
+lastUpdated: "December 2025"
 ---
 
 ## Introduction
 
-KeepinTracks ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.
+Keepin' Tracks ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.
 
 ## Information We Collect
 
@@ -45,5 +45,5 @@ You have the right to:
 
 ## Contact Us
 
-If you have questions about this Privacy Policy, please contact us at [privacy@keepintracks.com](mailto:privacy@keepintracks.com).
+If you have questions about this Privacy Policy, please contact us at [info@keepintracks.com](mailto:info@keepintracks.com).
 

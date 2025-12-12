@@ -1,14 +1,14 @@
 ---
 title: "Security First: Hide Email, Password Managers, and 2FA"
 date: 2024-11-15
-description: "Learn about Keepin'App's security features including hide email support, password manager integration, and two-factor authentication."
+description: "Learn about Keepin' App's security features including hide email support, password manager integration, and two-factor authentication."
 image: "/images/posts/security.jpg"
 categories: ["Security", "Features"]
 linkedin: "https://www.linkedin.com/company/keepintracks"
 draft: true
 ---
 
-At Keepin'App, your security and privacy are our top priorities. We've implemented several advanced security features to protect your data.
+At Keepin' App, your security and privacy are our top priorities. We've implemented several advanced security features to protect your data.
 
 ## Hide Email Support
 
@@ -16,7 +16,7 @@ We support **hide email** functionality, allowing you to sign up without reveali
 
 ## Password Manager Integration
 
-Keepin'App works seamlessly with all major password managers:
+Keepin' App works seamlessly with all major password managers:
 - 1Password
 - LastPass
 - Bitwarden
@@ -40,5 +40,5 @@ All your data is encrypted both in transit and at rest. We use industry-standard
 
 We believe in privacy by design - your data belongs to you. We never sell your information, and you can export or delete your data at any time.
 
-Stay secure, stay private with Keepin'App.
+Stay secure, stay private with Keepin' App.
 

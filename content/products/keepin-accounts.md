@@ -1,11 +1,11 @@
 ---
-title: "Keepin'Accounts"
+title: "Keepin' Accounts"
 description: "Professional accounting software for your business"
 ---
 
 **Professional Accounting Software**
 
-Keepin'Accounts is a comprehensive accounting solution designed to help businesses manage their finances with ease and precision.
+Keepin' Accounts is a comprehensive accounting solution designed to help businesses manage their finances with ease and precision.
 
 ## Coming Soon
 
@@ -37,7 +37,7 @@ Connect your bank accounts for automatic transaction import and reconciliation.
 
 ## Stay Updated
 
-Sign up to be notified when Keepin'Accounts is available!
+Sign up to be notified when Keepin' Accounts is available!
 
 [Get Notified →](/contact/)
 
