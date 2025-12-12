@@ -1,0 +1,39 @@
+{{- $date := .date -}}
+{{- $lang := .lang -}}
+{{- $format := .format | default "January 2, 2006" -}}
+
+{{- if eq $lang "fr" -}}
+  {{- $monthNames := dict 
+    "January" "janvier"
+    "February" "février"
+    "March" "mars"
+    "April" "avril"
+    "May" "mai"
+    "June" "juin"
+    "July" "juillet"
+    "August" "août"
+    "September" "septembre"
+    "October" "octobre"
+    "November" "novembre"
+    "December" "décembre"
+    "Jan" "janvier"
+    "Feb" "février"
+    "Mar" "mars"
+    "Apr" "avril"
+    "May" "mai"
+    "Jun" "juin"
+    "Jul" "juillet"
+    "Aug" "août"
+    "Sep" "septembre"
+    "Oct" "octobre"
+    "Nov" "novembre"
+    "Dec" "décembre"
+  -}}
+  {{- $formatted := $date | time.Format $format -}}
+  {{- range $en, $fr := $monthNames -}}
+    {{- $formatted = replace $formatted $en $fr -}}
+  {{- end -}}
+  {{- $formatted -}}
+{{- else -}}
+  {{- $date | time.Format $format -}}
+{{- end -}}

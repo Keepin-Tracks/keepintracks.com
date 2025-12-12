@@ -46,9 +46,9 @@
         <div class="post-meta">
           <time datetime="{{ .Date | time.Format "2006-01-02" }}" class="post-date">
             {{ if eq .Lang "fr" }}
-              {{ .Date | time.Format "02/01/2006" }}
+              {{ partial "date-format.html" (dict "date" .Date "lang" .Lang "format" "2 January 2006") }}
             {{ else }}
-              {{ .Date | time.Format "January 2, 2006" }}
+              {{ partial "date-format.html" (dict "date" .Date "lang" .Lang "format" "January 2, 2006") }}
             {{ end }}
           </time>
           {{ if .Params.linkedin }}

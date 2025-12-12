@@ -24,7 +24,7 @@
         <p class="product-tagline">{{ if eq .Lang "fr" }}Suivi Personnel Gratuit{{ else }}Free Personal Tracking{{ end }}</p>
         <p class="product-description">
           {{ if eq .Lang "fr" }}
-            Suivez votre santé, votre esprit et votre richesse en un seul endroit. Surveillez les finances, la valeur nette, le poids, l'exercice et le journal.
+            Suis ta santé, ton esprit et ta richesse en un seul endroit. Surveille tes finances, ta valeur nette, ton poids, tes exercices et ton journal.
           {{ else }}
             Track your health, mind, and wealth all in one place. Monitor finances, net worth, weight, exercise, and journaling.
           {{ end }}
@@ -60,7 +60,7 @@
         <p class="product-tagline">{{ if eq .Lang "fr" }}Comptabilité Professionnelle{{ else }}Professional Accounting{{ end }}</p>
         <p class="product-description">
           {{ if eq .Lang "fr" }}
-            Logiciel de comptabilité complet pour votre entreprise. Gérez les factures, les dépenses et les rapports financiers.
+            Logiciel de comptabilité complet pour ton entreprise. Gère les factures, les dépenses et les rapports financiers.
           {{ else }}
             Comprehensive accounting software for your business. Manage invoices, expenses, and financial reports.
           {{ end }}
@@ -132,9 +132,9 @@
             <div class="post-meta">
               <time datetime="{{ .Date | time.Format "2006-01-02" }}" class="post-date">
                 {{ if eq .Lang "fr" }}
-                  {{ .Date | time.Format "02/01/2006" }}
+                  {{ partial "date-format.html" (dict "date" .Date "lang" .Lang "format" "2 January 2006") }}
                 {{ else }}
-                  {{ .Date | time.Format "January 2, 2006" }}
+                  {{ partial "date-format.html" (dict "date" .Date "lang" .Lang "format" "January 2, 2006") }}
                 {{ end }}
               </time>
               {{ if .Params.linkedin }}
