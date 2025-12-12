@@ -1,5 +1,6 @@
 ---
 title: "Keepin' App est maintenant en ligne !"
+slug: "Lancement Keepin' App"
 date: 2025-12-11
 description: "Salut ! Keepin' App est enfin là. J'ai travaillé dessus pendant des mois et je suis super content de te le partager."
 image: "/images/posts/net-worth-chart.png"
@@ -9,7 +10,7 @@ linkedin: "https://www.linkedin.com/company/keepintracks"
 
 Salut ! Je suis super content de te dire que **Keepin' App est enfin en ligne** et prêt à être utilisé !
 
-J'ai travaillé dessus pendant des mois, et honnêtement, j'ai hâte que tu l'essayes. Ça a été un parcours, et je suis vraiment fier de ce que j'ai construit.
+J'ai travaillé dessus pendant des mois, et honnêtement, j'ai hâte que tu l'essayes. Ça a été long un parcours, et je suis vraiment fier de ce que j'ai construit.
 
 ## Alors, C'est Quoi Keepin' App ?
 
